@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/balancesheet.js"></script>
+        <title>
+            Balance Sheet Calculator
+        </title>
+    </head>
+    <body class="p-3 mb-2 bg-success">
+        <div class="container-fluid"></div>
+            <div class="d-flex flex-column">
+                <div class="text-white">
+                    <h1>Bellarmine Financials - Balance Sheet Calculator</h1>
+                </div>
+            </div>
+        
+            <div class="d-grid bg-warning">
+                <div class="d-flex bg-black text-white h3">
+                    <div class="flex-fill">
+                        Assets
+                    </div>
+                    <div class="flex-fill">
+                        Liabilities
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="d-grid" id="cAssetBtn">
+                                <div class="row mx-2">
+                                    <label><b>Current Assets</b></label>
+                                </div>
+                                <div class="row mx-2 justify-content-end">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-light text-black float-end mx-2" onclick="hide1('cAssetBtn'); show1('cAssetInpt')">
+                                            Add Current Assets
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-none" id="cAssetInpt">
+                                <div class="row mx-2">
+                                    <label><b>Current Assets</b></label>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Cash:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="cash" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Inventory:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="inventory" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Supplies:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="supplies" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Temporary Investments:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="tempInvestsCA" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-end mx-4">
+                                    <div class="col">
+                                        <label class="border border-dark" style="float:right" id="tCA">Total Current Assets:</label>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="d-grid" id="invPropEquipBtn">
+                                <div class="row mx-2">
+                                    <label><b>Investment Property & Equipment</b></label>
+                                </div>
+                                <div class="row mx-2 justify-content-end">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-light text-black float-end mx-2" onclick="hide1('invPropEquipBtn');show1('invPropEquipInpt')">
+                                            Add Investment Property & Equipment
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-none" id="invPropEquipInpt">
+                                <div class="row mx-2">
+                                    <label><b>Investment Property & Equipment</b></label>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Land:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="land" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Building and Improvements:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="buildImprov" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Equipment:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="equipment" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Temporary Investments:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="tempInvestsIPE" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-end mx-4">
+                                    <div class="col">
+                                        <label class="border border-dark" style="float:right" id="tIPE">Total Investment Property & Equipment:</label>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="d-grid" id="intangBtn">
+                                <div class="row mx-2">
+                                    <label><b>Intangibles</b></label>
+                                </div>
+                                <div class="row mx-2 justify-content-end">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-light text-black float-end mx-2" onclick="hide1('intangBtn');show1('intangInpt')">
+                                            Add Intangibles
+                                        </button>
+                                    </div>
+                                </div>
+    
+                            </div>
+
+                            <div class="d-none" id="intangInpt">
+                                <div class="row mx-2">
+                                    <label><b>Intangibles</b></label>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Trade Names:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="tNames" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Goodwill:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="gWill" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-end mx-4">
+                                    <div class="col">
+                                        <label class="border border-dark" style="float:right" id="tIntang">Total Intangibles:</label>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="d-grid" id="cLiableBtn">
+                                <div class="row mx-2">
+                                    <label><b>Current Liabilities</b></label>
+                                </div>
+                                <div class="row mx-2 justify-content-end">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-light text-black float-end mx-2" onclick="hide1('cLiableBtn');show1('cLiableInpt')">
+                                            Add Current Liabilities
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-none" id="cLiableInpt">
+                                <div class="row mx-2">
+                                    <label><b>Current Liabilities</b></label>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Accounts Payable:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="accounts" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Notes Payable:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="notesCL" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Interest Payable:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="interest" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Wages Payable:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="wages" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Accrued Expenses:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="accExp" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-end mx-4">
+                                    <div class="col">
+                                        <label class="border border-dark" style="float:right" id="tCL">Total Current Liabilities:</label>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="d-grid" id="longTInvBtn">
+                                <div class="row mx-2">
+                                    <label><b>Long-Term Liabilities</b></label>
+                                </div>
+                                <div class="row mx-2 justify-content-end">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-light text-black float-end mx-2" onclick="hide1('longTInvBtn');show1('longTInvInpt')">
+                                            Add Long-Term Liabilities
+                                        </button>
+                                    </div>
+                                </div>
+    
+                            </div>
+
+                            <div class="d-none" id="longTInvInpt">
+                                <div class="row mx-2">
+                                    <label><b>Long-Term Liabilities</b></label>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Notes Payable:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="notesLTL" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-7 float-end">
+                                        <label style="float:right">Bonds Payable:</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="bonds" value="0" style="text-align:right;">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-end mx-4">
+                                    <div class="col">
+                                        <label class="border border-dark" style="float:right" id="tLTL">Total Long-Term Liabilities:</label>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="d-grid">
+                                <div class="row">
+                                    <h2><b>Total Position</b></h2>
+                                </div>
+                                <div class="row justify-content-md-start">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-sm btn-light text-black float-start mx-2" onclick="calculate()">
+                                            Calculate Position
+                                        </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row" id="tAsset">
+                                    <label class="h4">
+                                        Total Assets: $0.00
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <label class="h4" id="tLiable">
+                                        Total Liabilities: $0.00
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <label class="h4" id="pos">
+                                        Position: $0.00
+                                    </label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="bg-black text-white">
+            <h6>Designed By: Brian Johnston 2023</h6>
+        </div>
+        </div>
+    </body>
